@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Free PUBG UC Coins - Official Reward</title>
+    <title>Claim Free PUBG UC Coins - Official Rewards</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary: #F8A51B;
@@ -33,36 +34,70 @@
             margin: 0 auto;
         }
 
-        /* Header Styles */
-        .reward-header {
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--bg) 100%);
-            border-radius: 15px;
-            margin-bottom: 25px;
-            border: 2px solid var(--primary);
+        /* Username Verification Section */
+        .username-section {
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 15px rgba(248, 165, 27, 0.2);
+        }
+
+        .username-input-group {
             position: relative;
-            overflow: hidden;
+            margin: 15px 0;
         }
 
-        .reward-header::after {
-            content: '';
+        .username-icon {
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(248, 165, 27, 0.1), transparent);
-            transform: rotate(45deg);
-            animation: shine 3s infinite;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
         }
 
-        .pubg-logo {
-            width: 120px;
-            margin-bottom: 15px;
+        .username-input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            background: var(--bg);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 16px;
+            transition: all 0.3s ease;
         }
 
-        /* Reward Preview */
+        .username-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(248, 165, 27, 0.3);
+        }
+
+        .verify-button {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: var(--secondary);
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .verify-button:hover {
+            transform: scale(1.02);
+        }
+
+        .username-error {
+            color: var(--accent);
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Enhanced Reward Display */
         .reward-display {
             background: var(--secondary);
             border-radius: 12px;
@@ -71,60 +106,41 @@
             position: relative;
             border: 1px solid var(--primary);
             box-shadow: 0 0 15px rgba(248, 165, 27, 0.2);
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
         }
 
-        .uc-coin {
-            width: 100px;
-            height: 100px;
-            background: var(--bg);
+        .reward-display.active {
+            opacity: 1;
+        }
+
+        /* Progress Indicator */
+        .progress-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .progress-step {
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
-            margin: 0 auto 15px;
+            background: var(--bg);
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 3px solid var(--primary);
-            font-size: 24px;
+            border: 2px solid var(--primary);
+            color: var(--primary);
             font-weight: 700;
-            color: var(--primary);
         }
 
-        /* Progress Tracker */
-        .progress-container {
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 15px;
-            margin: 25px 0;
-        }
-
-        .progress-steps {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 14px;
-            color: var(--primary);
-        }
-
-        .progress-bar {
-            height: 10px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
+        .progress-step.active {
             background: var(--primary);
-            width: 50%;
-            transition: width 0.3s ease;
+            color: var(--secondary);
         }
 
-        /* Offer Cards */
-        .offer-grid {
-            display: grid;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
+        /* Enhanced Offer Cards */
         .offer-card {
             background: var(--secondary);
             border-radius: 10px;
@@ -135,172 +151,128 @@
             border-left: 4px solid var(--primary);
             transition: transform 0.2s ease;
             cursor: pointer;
+            margin: 10px 0;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .offer-card.active {
+            opacity: 1;
+            pointer-events: all;
         }
 
         .offer-card:hover {
             transform: translateX(5px);
         }
 
-        .offer-icon {
-            width: 45px;
-            height: 45px;
-            background: var(--bg);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: var(--primary);
-        }
-
-        .offer-content {
-            flex: 1;
-        }
-
-        .offer-title {
-            font-family: 'Orbitron', sans-serif;
-            color: var(--text);
-            margin-bottom: 5px;
-        }
-
-        .offer-subtitle {
-            color: #AAAAAA;
-            font-size: 14px;
-        }
-
-        .offer-button {
-            background: var(--primary);
-            color: var(--secondary);
-            border: none;
-            padding: 8px 20px;
-            border-radius: 6px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: opacity 0.2s ease;
-        }
-
-        .offer-button:hover {
-            opacity: 0.9;
-        }
-
-        /* Countdown Timer */
-        .countdown {
+        /* Success Animation */
+        .success-check {
+            display: none;
             text-align: center;
-            margin: 25px 0;
-            padding: 15px;
-            background: var(--accent);
-            border-radius: 8px;
-            font-family: 'Orbitron', sans-serif;
+            font-size: 50px;
+            color: var(--primary);
+            animation: bounce 1s ease;
         }
 
-        @keyframes shine {
-            0% { left: -50%; }
-            100% { left: 150%; }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 480px) {
-            .offer-card {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .offer-button {
-                width: 100%;
-            }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="reward-header">
-            <img src="pubg-logo.png" alt="PUBG Mobile" class="pubg-logo">
-            <h1>CLAIM FREE UC COINS</h1>
-            <p>Complete offers to unlock your reward!</p>
-        </header>
+        <div class="username-section">
+            <h2 style="font-family: 'Orbitron', sans-serif; color: var(--primary); margin-bottom: 15px;">
+                <i class="fas fa-user-shield"></i> Account Verification
+            </h2>
+            
+            <div class="username-input-group">
+                <i class="fas fa-user-tag username-icon"></i>
+                <input type="text" 
+                       class="username-input" 
+                       placeholder="Enter PUBG Username"
+                       id="pubgUsername">
+            </div>
+            
+            <div class="username-error" id="usernameError">
+                <i class="fas fa-exclamation-circle"></i> Please enter a valid PUBG username
+            </div>
 
-        <div class="reward-display">
+            <button class="verify-button" onclick="verifyUsername()">
+                VERIFY ACCOUNT
+            </button>
+        </div>
+
+        <div class="reward-display" id="rewardDisplay">
             <div class="uc-coin">500 UC</div>
-            <h3 style="text-align: center; margin-bottom: 10px;">PUBG Mobile UC Reward</h3>
+            <h3 style="text-align: center; margin-bottom: 10px;">Reward for: <span id="rewardUsername"></span></h3>
             <p style="text-align: center; color: #AAAAAA;">Value: $4.99</p>
         </div>
 
-        <div class="progress-container">
-            <div class="progress-steps">
-                <span>Step 1 of 2</span>
-                <span>50% Completed</span>
-            </div>
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
-            </div>
+        <div class="progress-indicator">
+            <div class="progress-step active">1</div>
+            <div class="progress-step">2</div>
+            <div class="progress-step">3</div>
         </div>
 
-        <div class="countdown">
-            <h3>OFFER EXPIRES IN: <span id="timer">04:59</span></h3>
+        <div class="offer-card" id="offer1">
+            <div class="offer-icon"><i class="fas fa-download"></i></div>
+            <div class="offer-content">
+                <h3 class="offer-title">Download & Install App</h3>
+                <p class="offer-subtitle">Earn 500 UC Coins</p>
+            </div>
+            <button class="offer-button">Start</button>
         </div>
 
-        <div class="offer-grid">
-            <div class="offer-card" onclick="startOffer(1)">
-                <div class="offer-icon">1</div>
-                <div class="offer-content">
-                    <h3 class="offer-title">Download & Open App</h3>
-                    <p class="offer-subtitle">+500 UC Coins Reward</p>
-                </div>
-                <button class="offer-button">Start</button>
-            </div>
-
-            <div class="offer-card" onclick="startOffer(2)">
-                <div class="offer-icon"><i class="fas fa-video"></i></div>
-                <div class="offer-content">
-                    <h3 class="offer-title">Watch Video</h3>
-                    <p class="offer-subtitle">+100 UC Coins Reward</p>
-                </div>
-                <button class="offer-button">Start</button>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 25px; color: #AAAAAA; font-size: 12px;">
-            <p>Complete all offers to receive your reward</p>
-            <p>Instant delivery • No surveys • 100% Free</p>
+        <div class="success-check" id="successCheck">
+            <i class="fas fa-check-circle"></i>
         </div>
     </div>
 
     <script>
-        // Countdown Timer
-        let timeLeft = 300; // 5 minutes in seconds
-        const timerElement = document.getElementById('timer');
+        let verifiedUsername = null;
 
-        function updateTimer() {
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
-            timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-            
-            if(timeLeft <= 0) {
-                clearInterval(timerInterval);
-                alert('Offer expired! Refresh to try again.');
-            } else {
-                timeLeft--;
+        function verifyUsername() {
+            const usernameInput = document.getElementById('pubgUsername');
+            const errorElement = document.getElementById('usernameError');
+            const username = usernameInput.value.trim();
+
+            // Basic validation
+            if(username.length < 3 || !/^[a-zA-Z0-9_]+$/.test(username)) {
+                errorElement.style.display = 'block';
+                usernameInput.focus();
+                return;
             }
-        }
 
-        const timerInterval = setInterval(updateTimer, 1000);
+            errorElement.style.display = 'none';
+            verifiedUsername = username;
 
-        // Offer Completion Logic
-        function startOffer(offerId) {
-            // Add your offer completion logic here
-            console.log(`Starting offer ${offerId}`);
+            // Activate UI elements
+            document.getElementById('rewardDisplay').classList.add('active');
+            document.querySelectorAll('.offer-card').forEach(card => {
+                card.classList.add('active');
+            });
+            document.getElementById('rewardUsername').textContent = username;
             
-            // Example completion callback
-            setTimeout(() => {
-                completeOffer(offerId);
-            }, 2000);
+            // Update progress indicator
+            document.querySelectorAll('.progress-step')[1].classList.add('active');
         }
 
-        function completeOffer(offerId) {
-            const progressFill = document.querySelector('.progress-fill');
-            progressFill.style.width = '100%';
-            document.querySelector('.progress-steps span').textContent = 'Step 2 of 2';
-            document.querySelector('.progress-steps span:last-child').textContent = '100% Completed';
+        function startOffer(offerId) {
+            if(!verifiedUsername) {
+                alert('Please verify your username first!');
+                return;
+            }
+
+            // Simulate offer completion
+            document.querySelectorAll('.progress-step')[2].classList.add('active');
+            document.getElementById('successCheck').style.display = 'block';
+            
+            // Show success message
+            setTimeout(() => {
+                alert(`${verifiedUsername}, your 500 UC coins are being processed!`);
+            }, 1000);
         }
     </script>
 </body>
