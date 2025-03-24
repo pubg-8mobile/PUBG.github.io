@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Free PUBG UC Coins - Official Reward</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #F8A51B;
+            --secondary: #0F1C3F;
+            --accent: #E53C3C;
+            --bg: #1A1A1A;
+            --text: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 20px 15px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        .reward-header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--bg) 100%);
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border: 2px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reward-header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(248, 165, 27, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        .pubg-logo {
+            width: 120px;
+            margin-bottom: 15px;
+        }
+
+        /* Reward Preview */
+        .reward-display {
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 15px rgba(248, 165, 27, 0.2);
+        }
+
+        .uc-coin {
+            width: 100px;
+            height: 100px;
+            background: var(--bg);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--primary);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Progress Tracker */
+        .progress-container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 25px 0;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: var(--primary);
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary);
+            width: 50%;
+            transition: width 0.3s ease;
+        }
+
+        /* Offer Cards */
+        .offer-grid {
+            display: grid;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .offer-card {
+            background: var(--secondary);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .offer-card:hover {
+            transform: translateX(5px);
+        }
+
+        .offer-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--bg);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+        .offer-content {
+            flex: 1;
+        }
+
+        .offer-title {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+
+        .offer-subtitle {
+            color: #AAAAAA;
+            font-size: 14px;
+        }
+
+        .offer-button {
+            background: var(--primary);
+            color: var(--secondary);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .offer-button:hover {
+            opacity: 0.9;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            text-align: center;
+            margin: 25px 0;
+            padding: 15px;
+            background: var(--accent);
+            border-radius: 8px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        @keyframes shine {
+            0% { left: -50%; }
+            100% { left: 150%; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .offer-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .offer-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="reward-header">
+            <img src="pubg-logo.png" alt="PUBG Mobile" class="pubg-logo">
+            <h1>CLAIM FREE UC COINS</h1>
+            <p>Complete offers to unlock your reward!</p>
+        </header>
+
+        <div class="reward-display">
+            <div class="uc-coin">500 UC</div>
+            <h3 style="text-align: center; margin-bottom: 10px;">PUBG Mobile UC Reward</h3>
+            <p style="text-align: center; color: #AAAAAA;">Value: $4.99</p>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-steps">
+                <span>Step 1 of 2</span>
+                <span>50% Completed</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="countdown">
+            <h3>OFFER EXPIRES IN: <span id="timer">04:59</span></h3>
+        </div>
+
+        <div class="offer-grid">
+            <div class="offer-card" onclick="startOffer(1)">
+                <div class="offer-icon">1</div>
+                <div class="offer-content">
+                    <h3 class="offer-title">Download & Open App</h3>
+                    <p class="offer-subtitle">+500 UC Coins Reward</p>
+                </div>
+                <button class="offer-button">Start</button>
+            </div>
+
+            <div class="offer-card" onclick="startOffer(2)">
+                <div class="offer-icon"><i class="fas fa-video"></i></div>
+                <div class="offer-content">
+                    <h3 class="offer-title">Watch Video</h3>
+                    <p class="offer-subtitle">+100 UC Coins Reward</p>
+                </div>
+                <button class="offer-button">Start</button>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 25px; color: #AAAAAA; font-size: 12px;">
+            <p>Complete all offers to receive your reward</p>
+            <p>Instant delivery • No surveys • 100% Free</p>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        let timeLeft = 300; // 5 minutes in seconds
+        const timerElement = document.getElementById('timer');
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert('Offer expired! Refresh to try again.');
+            } else {
+                timeLeft--;
+            }
+        }
+
+        const timerInterval = setInterval(updateTimer, 1000);
+
+        // Offer Completion Logic
+        function startOffer(offerId) {
+            // Add your offer completion logic here
+            console.log(`Starting offer ${offerId}`);
+            
+            // Example completion callback
+            setTimeout(() => {
+                completeOffer(offerId);
+            }, 2000);
+        }
+
+        function completeOffer(offerId) {
+            const progressFill = document.querySelector('.progress-fill');
+            progressFill.style.width = '100%';
+            document.querySelector('.progress-steps span').textContent = 'Step 2 of 2';
+            document.querySelector('.progress-steps span:last-child').textContent = '100% Completed';
+        }
+    </script>
+</body>
+</html>
